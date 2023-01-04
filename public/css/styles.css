@@ -1,0 +1,14 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    padding: 1%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff4757;
+}

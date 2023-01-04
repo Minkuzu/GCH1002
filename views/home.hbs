@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>ATN Toy Store</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 style="text-align: center;"><a href="/">ATN Toy Store</a></h1>
+        <div class="ui menu">
+            <div class="header item">
+                <a href="/new">New Product</a>
+            </div>
+            <div class="right menu">
+            <div class="item">
+            <div class="ui icon input">
+                <form action="/search" method="post">
+                    <input type="text" name="txtSearch" placeholder="Search...">
+                    <input class="search link icon" type="submit" value="Search">
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <table class="ui celled table">
+        <thead>
+            <tr><th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr></thead>
+        <tbody>
+            {{#each results}}
+            <tr>
+                <td data-label="Name">{{name}}</td>
+                <td data-label="Price">{{price}}$</td>
+                <td data-label="Description">{{desc}}</td>
+                <td data-label="Image"><img src="{{picture}}" alt="" width="150" height="100"></td>
+                <td data-label="Action">
+                    <a href="/delete?id={{_id}}" onclick="return confirm('are you sure you want to delete?')" style="color:red; text-align:center;">Delete</a><br>
+                    <div class="ui horizontal divider">
+                    </div>
+                    <a href="/edit?id={{_id}}" style="color: green; text-align:center;">Edit</a></li>
+                </td>
+                
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{!-- <ul>
+        {{#each results}}
+            <li>{{name}}: {{price}}$
+                <br>
+                <img src="{{picture}}" alt="" width="150" height="100">
+                <a href="/delete?id={{_id}}" onclick="return confirm('are you sure you want to delete?')">Delete</a>
+                <a href="/edit?id={{_id}}">Edit</a></li>
+            </li>
+        {{/each}}
+    </ul> --}}
+</body>
+</html>
