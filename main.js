@@ -6,7 +6,7 @@ var mongo = require('mongodb')
 var path = require('path')
 
 var mongoClient = require('mongodb').MongoClient
-var url = 'mongodb+srv://Minkuzu:7898797799as@cluster0.cxg3ckn.mongodb.net/test'
+var url = 'mongodb+srv://Minkuzu:7898797799as@cluster0.vwnii7e.mongodb.net/test'
 
 app.set('view engine', 'hbs')
 app.use(express.static('public'))
